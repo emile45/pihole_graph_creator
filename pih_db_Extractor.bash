@@ -1,0 +1,2 @@
+sqlite3 -header -csv /etc/pihole/pihole-FTL.db "select timestamp, domain from queries;" > allqueries.csv
+gawk -F, '{print strftime("%Y-%m-%d@%Hh%M:%S", $1),$2}' OFS=, allqueries.csv > allqueriesFormatted.csv

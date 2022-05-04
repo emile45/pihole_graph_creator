@@ -1,0 +1,34 @@
+<html>
+<head>
+<!--API AJAX -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+// API Visualization et package piechart
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(drawChart);
+// Instanciation du graphique
+function drawChart() {
+// Cree la table des donnees
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Title');
+data.addColumn('number', 'Value');
+data.addRows([
+['lb._dns-sd._udp.0.18.168.192.in-addr.arpa', 213135],['1.courier-push-apple.com.akadns.net', 198752],['e6858.dscx.akamaiedge.net', 197600],['api.apple-cloudkit.fe.apple-dns.net', 196802],['gs-loc.ls-apple.com.akadns.net', 191073],['us-sandbox-courier-4.push-apple.com.akadns.net', 146933],['209.18.168.192.in-addr.arpa', 98487],['240.18.168.192.in-addr.arpa', 73358],['v10.events.data.microsoft.com', 56133],['gs-loc-new.ls-apple.com.akadns.net', 55396],['1.courier-sandbox-push-apple.com.akadns.net', 51684],['kv601.prod.do.dsp.mp.microsoft.com', 37764],['browser.pipe.aria.microsoft.com', 33445],['settings-win.data.microsoft.com', 31642],['time-osx.g.aaplimg.com', 29886],['161.18.168.192.in-addr.arpa', 25393],['edge.microsoft.com', 21222],['ctldl.windowsupdate.com', 19014],['www.apple.com', 18670],['watson.telemetry.microsoft.com', 16571],['telemetry.dropbox.com', 15028],['www.bing.com', 13587],['gsp85-ssl.ls.apple.com', 13068],['dns.msftncsi.com', 12827],['nav.smartscreen.microsoft.com', 12720],['gspe1-ssl.ls.apple.com', 11572],['arc.msn.com', 11565],['d.dropbox.com', 11076],['cp601.prod.do.dsp.mp.microsoft.com', 10370],['login.live.com', 10010],['contile.services.mozilla.com', 9923],['gsp85-ssl.ls2-apple.com.akadns.net', 9859],['spclient.wg.spotify.com', 9451],['config.edge.skype.com', 9055],['safebrowsing.googleapis.com', 8910],['array610.prod.do.dsp.mp.microsoft.com', 8828],['www.google.com', 8632],['e6987.a.akamaiedge.net', 8488],['154.18.168.192.in-addr.arpa', 8447],['connectivity-check.ubuntu.com', 8239]
+]);
+// Options
+var options = {'title':'Hits par domaines',
+'width':1200,
+'height':800};
+// Conception du graphique
+var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+
+chart.draw(data, options);
+}
+</script>
+</head>
+<body>
+<!--Div qui contiendra le graphique-->
+<div id="chart_div"></div>
+</body>
+</html>
